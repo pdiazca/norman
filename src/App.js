@@ -3,7 +3,7 @@ import { observer, inject } from 'mobx-react'
 import Hello from './components/Hello'
 import First from './components/First'
 import Second from './components/Second'
-import './App.css';
+import './App.scss';
 
 class App extends React.Component {
   render() {

@@ -7,7 +7,6 @@ import ComponentStore from './stores/componentStore'
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-
 ReactDOM.render(<Provider 
     projectStore={new projectStore()}
     componentStore={new ComponentStore()}>
