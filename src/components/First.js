@@ -38,7 +38,7 @@ class First extends React.Component {
     return (
       <div>
         <p>Please Type your name</p>
-          <input type="text" placeholder={this.state.placeholder} onChange={this.onChange.bind(this)} />
+          <input type="text" placeholder={this.state.placeholder} onChange={this.onChange.bind(this)} defaultValue={this.props.projectStore.name ? this.props.projectStore.name : ""} />
           <button type="button" onClick={this.testFunc.bind(this)} className="calculate-btn">Set Name</button>
           <NextButton disabled={this.state.nextDisabled}/>
           <BackButton />

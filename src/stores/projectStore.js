@@ -1,18 +1,18 @@
 import { observable, decorate, action  } from "mobx"
 
-class IncomeDomainStore {
+class projectStore {
     name = ""
 
+
     setName(name) {
-        let setName = name;
-        this.name = setName
+        this.name = name
     }
     
 }
 
-decorate(IncomeDomainStore, {
+decorate(projectStore, {
     name: observable,
     setName: action
 })
 
-export default IncomeDomainStore
+export default projectStore

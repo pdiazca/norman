@@ -4,12 +4,14 @@ import './index.css';
 import { Provider } from 'mobx-react'
 import projectStore from './stores/projectStore'
 import ComponentStore from './stores/componentStore'
+import PreviewStore from './stores/previewStore'
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<Provider 
     projectStore={new projectStore()}
-    componentStore={new ComponentStore()}>
+    componentStore={new ComponentStore()}
+    previewStore={new PreviewStore()}>
         <App />
     </Provider>, document.getElementById('root'));
 

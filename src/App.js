@@ -3,6 +3,7 @@ import { observer, inject } from 'mobx-react'
 import Hello from './components/Hello'
 import First from './components/First'
 import Second from './components/Second'
+import Preview from './components/Preview'
 import './App.scss';
 
 class App extends React.Component {
@@ -25,6 +26,7 @@ class App extends React.Component {
     return (
       <div className="App">
         {component}
+        <Preview />
       </div>
     );
   }
