@@ -1,7 +1,8 @@
 import React from 'react';
-import BackButton from './BackButton'
-import NextButton from './NextButton'
+import BackButton from '../BackButton'
+import NextButton from '../NextButton'
 import { observer, inject } from 'mobx-react'
+import styles from './First.module.scss';
 
 class First extends React.Component {
   constructor(props) {
