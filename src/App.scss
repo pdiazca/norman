@@ -1,1 +1,9 @@
-@import './stylesheets/global'
+@import './stylesheets/global/reset';
+@import './stylesheets/global/grid';
+@import './stylesheets/global/colors';
+@import './stylesheets/global/typography';
+@import './stylesheets/global/forms';
+
+body {
+	margin-top: 20vh;
+}

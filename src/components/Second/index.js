@@ -1,6 +1,7 @@
 import React from 'react';
-import BackButton from './BackButton'
-import { observer, inject } from 'mobx-react'
+import BackButton from '../BackButton'
+import { observer, inject } from 'mobx-react';
+import styles from './Second.module.scss';
 
 class Second extends React.Component {
   render() {

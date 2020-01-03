@@ -24,7 +24,7 @@ class App extends React.Component {
     }
 
     return (
-      <div className="App">
+      <div className="App grid-container">
         {component}
         <Preview />
       </div>

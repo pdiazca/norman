@@ -1,0 +1,20 @@
+@import url("https://use.typekit.net/dvt0pkd.css");
+
+h1 {
+  font-size: 40px;
+}
+
+body {
+  text-align: center;
+  font-family: acumin-pro, sans-serif;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--staples-black);
+}
+
+h1,h2,h3,h4,h5,h6,p,a,button,span,input,textarea,label,button {
+	font-family: acumin-pro, sans-serif;
+}
+button {
+	border:none;
+}

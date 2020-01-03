@@ -1,5 +1,6 @@
 import React from 'react';
-import { observer, inject } from 'mobx-react'
+import { observer, inject } from 'mobx-react';
+import styles from './NextButton.module.scss';
 
 class NextButton extends React.Component {
   render() {
@@ -8,7 +9,7 @@ class NextButton extends React.Component {
         <button 
           data-count={this.props.componentStore.viewCount} 
           onClick={e => this.props.componentStore.getNext(e)}
-          disabled={this.props.disabled}>Next</button>
+          disabled={this.props.disabled}>Start Designing!</button>
       </div>
     );
   }
