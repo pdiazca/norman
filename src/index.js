@@ -2,16 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import { Provider } from 'mobx-react'
-import projectStore from './stores/projectStore'
-import ComponentStore from './stores/componentStore'
-import PreviewStore from './stores/previewStore'
+import rootStore from './stores/rootStore'
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+const root = new rootStore()
+
 ReactDOM.render(<Provider 
-    projectStore={new projectStore()}
-    componentStore={new ComponentStore()}
-    previewStore={new PreviewStore()}>
+    rootStore={root}
+    projectStore={root.projectStore}
+    componentStore={root.componentStore}
+    previewStore={root.previewStore}
+    scraperStore={root.scraperStore}>
         <App />
     </Provider>, document.getElementById('root'));
 
