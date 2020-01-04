@@ -17,12 +17,17 @@ class Hello extends React.Component {
     })
   }
 
-  getResults() {
-    this.props.scraperStore.getScraperResults(this.state.url);
+  async getResults() {
+    this.props.loadingStore.toggleLoading(true);
+    const scraperResults = await this.props.scraperStore.getScraperResults(this.state.url);
     
-    if(this.props.projectStore.setUrl(this.state.url)) {
+    if(this.props.projectStore.setUrl(this.state.url) && scraperResults) {
+      this.props.loadingStore.toggleLoading(false);
       this.props.componentStore.getNext();
-    };
+    } else if(!scraperResults) {
+      this.props.loadingStore.toggleLoading(false);
+      this.props.messageStore.displayMessage("error", "Please check your URL");
+    }
   }
 
   render() {
@@ -38,6 +43,8 @@ class Hello extends React.Component {
 }
 export default inject(
   'scraperStore',
-  'projectStore', 
+  'loadingStore',
+  'projectStore',
+  'messageStore', 
   'componentStore'
   )(observer(Hello))
