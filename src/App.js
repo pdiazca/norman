@@ -35,7 +35,7 @@ class App extends React.Component {
       message = <Message />
     }
     return (
-      <div className="App grid-container">
+      <div className="App">
         {message}
         {loading}
         {component}
