@@ -37,8 +37,9 @@ class First extends React.Component {
 
   render() {
     return (
-      <div>
-        <p>Please Type your name</p>
+      <div className={styles.first}>
+      <h1>Thanks! Let's start with your <span>logo.</span></h1>
+        <p>Is this the logo you would like to use?</p>
           <input type="text" placeholder={this.state.placeholder} onChange={this.onChange.bind(this)} defaultValue={this.props.projectStore.name ? this.props.projectStore.name : ""} />
           <button type="button" onClick={this.testFunc.bind(this)} className="calculate-btn">Set Name</button>
           <NextButton disabled={this.state.nextDisabled}/>

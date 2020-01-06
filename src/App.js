@@ -39,7 +39,7 @@ class App extends React.Component {
         {message}
         {loading}
         {component}
-        <Preview />
+        {this.props.componentStore.getPreview() && <Preview />}
       </div>
     );
   }
