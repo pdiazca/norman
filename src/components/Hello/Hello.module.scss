@@ -1,18 +1,8 @@
 @import '../../stylesheets/utils/mixins';
 
 .hello {
-	grid-column: 1/-1;
 	margin: auto;
-	&>* {
-		margin: 2vh auto;
-	}
-	h1 {
-		grid-column: 1/-1;
-		span {
-			color: var(--staples-red);
-			font-weight: 600;
-		}
-	}
+	@include default-margins;
 
 	p {
 		max-width: 500px;
@@ -22,5 +12,6 @@
 		max-width: 300px;
 		width: 100%;
 		text-align: center;
+		display: block;
 	}
 }

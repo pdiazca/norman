@@ -1,3 +1,5 @@
-// body {
-// 	background: red !important;
-// }
+@import '../../stylesheets/utils/mixins';
+
+.first {
+	@include default-margins;
+}

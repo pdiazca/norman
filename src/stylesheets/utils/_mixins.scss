@@ -5,3 +5,9 @@
 	grid-row-gap: 16px;
 	justify-items: stretch;
 }
+
+@mixin default-margins {
+	&>* {
+		margin: 2vh auto;
+	}
+}

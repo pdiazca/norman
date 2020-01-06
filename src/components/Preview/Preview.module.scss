@@ -1,3 +1,46 @@
-body {
-	// background: red !important;
+.preview {
+	position: absolute;
+	background: white;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1000;
+	min-width: 300px;
+	width: 20vw;
+	transform: translateX(0);
+	transition: all 0.2s ease-in-out;
+	box-shadow: 0 4px 18px rgba(91, 42, 42, 0.15);
+	&.open {
+		transform: translateX(0);
+	}
+	&.closed {
+		transform: translateX(90%);
+		button {
+			transform: rotate(-180deg);
+		}
+	}
+
+	button {
+		background: white;
+		width: 40px;
+		height: 40px;
+		min-width: unset;
+		padding: 0;
+		border: none;
+		display: flex;
+		align-content: center;
+		justify-content: center;
+		position: absolute;
+		left: -20px;
+		top: 5vh;
+		cursor: pointer;
+		&:focus {
+			outline: none;
+		}
+
+		img {
+			width: 20px;
+			height: 18px;
+		}
+	}
 }

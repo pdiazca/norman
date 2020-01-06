@@ -7,17 +7,18 @@ class previewStore {
 
     toggleOpen() {
       this.open = !this.open;
-      this.changeText();
+      console.log(this);
+      // this.changeText();
     }
 
-    changeText() {
-      this.open ? this.buttonText = "Close Preview" : this.buttonText = "Open Preview"
-    }
+    // changeText() {
+    //   this.open ? this.buttonText = "" : this.buttonText = "";
+    // }
 }
 
 decorate(previewStore, {
     open: observable,
-    buttonText: observable,
+    // buttonText: observable,
     toggleOpen: action
 })
 

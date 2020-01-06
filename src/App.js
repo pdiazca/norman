@@ -24,9 +24,9 @@ class App extends React.Component {
     }
 
     return (
-      <div className="App grid-container">
+      <div className="App">
         {component}
-        <Preview />
+        {this.props.componentStore.getPreview() && <Preview />}
       </div>
     );
   }
