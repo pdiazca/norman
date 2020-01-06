@@ -17,6 +17,17 @@ class projectStore {
         return false
     }
 
+
+    sanitizeUrl(url) {
+    let sanitizedUrl;
+      var prefix = 'http://';
+    if (url.substr(0, prefix.length) !== prefix) {
+        sanitizedUrl = prefix + url;
+    }     
+    return sanitizedUrl;
+  }
+  
+
     _isUrlValid(userUrl) {
         var res = userUrl.match(/^((?:http:\/\/)|(?:https:\/\/))(www.)?((?:[a-zA-Z0-9]+\.[a-z]{3})|(?:\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}(?::\d+)?))([\/a-zA-Z0-9\.]*)$/gm);
         if(res == null)
