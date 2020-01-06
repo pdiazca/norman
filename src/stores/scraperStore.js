@@ -7,11 +7,12 @@ class scraperStore {
   primaryColours = []
 
   getScraperResults(url) {
-  	// console.log(typeof(url));
-  	// url = this.sanitizeUrl(url);
-  	// console.log(typeof(url));
-    db.getUrlResults(url).then((res) => {
-      console.log(res);
+    return db.getUrlResults(url).then((res) => {
+      if(res !== false) {
+        return true
+      } else {
+        return false
+      }
     });
   }
 

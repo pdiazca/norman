@@ -13,7 +13,9 @@ ReactDOM.render(<Provider
     projectStore={root.projectStore}
     componentStore={root.componentStore}
     previewStore={root.previewStore}
-    scraperStore={root.scraperStore}>
+    scraperStore={root.scraperStore}
+    loadingStore={root.loadingStore}
+    messageStore={root.messageStore}>
         <App />
     </Provider>, document.getElementById('root'));
 

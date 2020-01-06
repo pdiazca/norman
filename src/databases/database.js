@@ -7,8 +7,8 @@ const DB = class  {
     .then(function (response) {
       return response.data
     })
-    .catch(function (error) {
-      return error
+    .catch(function () {
+      return false
     })
   }
 }

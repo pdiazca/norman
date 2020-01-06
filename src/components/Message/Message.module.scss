@@ -1,0 +1,27 @@
+@mixin alert($bgColor, $textColor, $borderColor) {
+  padding: .75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid $borderColor;
+  border-radius: .25rem;
+  top: 0;
+  right: 0;
+  left: 0;
+  position: absolute;
+  width: 50%;
+  margin: 0 auto;
+  background: $bgColor;
+  transform: translateY(25px);
+  color: $textColor;
+}
+
+.alertSuccess {
+  @include alert(#d4edda, #155724, #c3e6cb);
+}
+
+.alertError {
+  @include alert(#f8d7da, #721c24, #f5c6cb);
+}
+
+.alertWarning {
+  @include alert(#fff3cd, #856404, #ffeeba);
+}
