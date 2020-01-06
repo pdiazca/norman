@@ -19,7 +19,12 @@ class Hello extends React.Component {
 
   async getResults() {
     this.props.loadingStore.toggleLoading(true);
-    const scraperResults = await this.props.scraperStore.getScraperResults(this.state.url);
+
+    if(this.state.url === "") {
+      this.props.messageStore.displayMessage("error", "Please provide a URL");
+      this.props.loadingStore.toggleLoading(false);
+    } else {
+      const scraperResults = await this.props.scraperStore.getScraperResults(this.state.url);
     
     if(this.props.projectStore.setUrl(this.state.url) && scraperResults) {
       this.props.loadingStore.toggleLoading(false);
@@ -27,6 +32,7 @@ class Hello extends React.Component {
     } else if(!scraperResults) {
       this.props.loadingStore.toggleLoading(false);
       this.props.messageStore.displayMessage("error", "Please check your URL");
+    }
     }
   }
 
