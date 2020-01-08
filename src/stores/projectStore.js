@@ -3,6 +3,7 @@ import { observable, decorate, action  } from "mobx"
 class projectStore {
     name = ""
     url = ""
+    primaryColour = ""
 
     setName(name) {
         this.name = name
@@ -17,6 +18,10 @@ class projectStore {
         return false
     }
 
+    setPrimaryColour(colour) {
+        this.primaryColour = colour
+    }
+
     _isUrlValid(userUrl) {
         var res = userUrl.match(/^((?:http:\/\/)|(?:https:\/\/))(www.)?((?:[a-zA-Z0-9]+\.[a-z]{3})|(?:\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}(?::\d+)?))([\/a-zA-Z0-9\.]*)$/gm);
         if(res == null)
@@ -29,6 +34,8 @@ class projectStore {
 decorate(projectStore, {
     name: observable,
     url: observable,
+    primaryColour: observable,
+    setPrimaryColour: action,
     setName: action,
     setUrl: action
 })

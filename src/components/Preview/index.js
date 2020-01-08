@@ -9,13 +9,15 @@ class Preview extends React.Component {
     return (
       <div className={styles.preview + ' ' + `${this.props.previewStore.open ? styles.open : styles.closed}`}>
         <button onClick={() => this.props.previewStore.toggleOpen()}>
-          <img src={arrow} />
+          <img src={arrow} alt="arrow" />
         </button>
         <div>
         <p>Your URL</p>
           <p>{this.props.projectStore.url}</p>
           <p>Your Name</p>
           <p>{this.props.projectStore.name}</p>
+          <p>Primary Colour</p>
+          <p>{this.props.projectStore.primaryColour}</p>
         </div>
       </div>
     );

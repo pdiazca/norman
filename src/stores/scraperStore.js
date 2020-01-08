@@ -9,6 +9,9 @@ class scraperStore {
   getScraperResults(url) {
     return db.getUrlResults(url).then((res) => {
       if(res !== false) {
+        res.coloursBg.forEach((elm) => {
+          this.primaryColours.push(elm[0])
+        });
         return true
       } else {
         return false
