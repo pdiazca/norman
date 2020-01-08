@@ -1,7 +1,7 @@
 import { observable, decorate, action  } from "mobx"
 
 class projectStore {
-    name = "name"
+    name = ""
     url = ""
     primaryColour = ""
 

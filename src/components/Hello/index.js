@@ -8,7 +8,7 @@ class Hello extends React.Component {
     super(props);
     this.btn = React.createRef();
     this.state = {
-      url: "http://www.amazon.com"
+      url: ""
     };
   }
 
