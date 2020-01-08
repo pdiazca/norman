@@ -3,6 +3,7 @@ import { observer, inject } from 'mobx-react'
 import Hello from './components/Hello'
 import First from './components/First'
 import Second from './components/Second'
+import SecondaryColour from './components/SecondaryColour'
 import Preview from './components/Preview'
 import Loader from './components/Loader'
 import Message from './components/Message'
@@ -24,8 +25,10 @@ class App extends React.Component {
       case 3:
         component = <Second />
         break;
+      case 4:
+        component = <SecondaryColour />
+        break;
       default:
-        component = <Second />
     }
 
     if(this.props.loadingStore.isLoading) {
