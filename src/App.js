@@ -25,6 +25,7 @@ class App extends React.Component {
         component = <Second />
         break;
       default:
+        component = <Second />
     }
 
     if(this.props.loadingStore.isLoading) {

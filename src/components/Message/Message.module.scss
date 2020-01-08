@@ -12,6 +12,8 @@
   background: $bgColor;
   transform: translateY(25px);
   color: $textColor;
+
+  animation: message-appear 1s;
 }
 
 .alertSuccess {
@@ -24,4 +26,16 @@
 
 .alertWarning {
   @include alert(#fff3cd, #856404, #ffeeba);
+}
+
+@keyframes message-appear {
+  0% {
+    transform: translateY(0px);
+    opacity: 0;
+  }
+
+  20% {
+    transform: translateY(25px);
+    opacity: 1;
+  }
 }

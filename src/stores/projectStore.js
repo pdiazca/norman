@@ -3,6 +3,7 @@ import { observable, decorate, action  } from "mobx"
 class projectStore {
     name = ""
     url = ""
+    primaryColour = ""
 
     setName(name) {
         this.name = name
@@ -15,6 +16,10 @@ class projectStore {
         }
 
         return false
+    }
+
+    setPrimaryColour(colour) {
+        this.primaryColour = colour
     }
 
 
@@ -40,6 +45,8 @@ class projectStore {
 decorate(projectStore, {
     name: observable,
     url: observable,
+    primaryColour: observable,
+    setPrimaryColour: action,
     setName: action,
     setUrl: action
 })
