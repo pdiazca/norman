@@ -1,0 +1,23 @@
+@import '../../stylesheets/utils/mixins';
+
+.logo {
+	@include default-margins;
+}
+
+.logoImageContainer {
+	max-width: 200px;
+	margin: 5vh auto 4vh;
+	img {
+		max-width: 100%;
+	}
+}
+
+.buttonContainer {
+	button {
+		margin: auto 0.5vw;
+	}
+}
+
+.uploadCTA {
+	margin-top: 5vh;
+}
