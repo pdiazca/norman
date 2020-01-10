@@ -4,6 +4,7 @@ class projectStore {
     name = ""
     url = ""
     primaryColour = ""
+    secondaryColour = ""
 
     setName(name) {
         this.name = name
@@ -20,6 +21,10 @@ class projectStore {
 
     setPrimaryColour(colour) {
         this.primaryColour = colour
+    }
+
+    setSecondaryColour(colour) {
+        this.secondaryColour = colour
     }
 
 
@@ -46,7 +51,9 @@ decorate(projectStore, {
     name: observable,
     url: observable,
     primaryColour: observable,
+    secondaryColour: observable,
     setPrimaryColour: action,
+    setSecondaryColour: action,
     setName: action,
     setUrl: action
 })

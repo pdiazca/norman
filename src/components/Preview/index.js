@@ -18,6 +18,8 @@ class Preview extends React.Component {
           <p>{this.props.projectStore.name}</p>
           <p>Primary Colour</p>
           <p>{this.props.projectStore.primaryColour}</p>
+          <p>Secondary Colour</p>
+          <p>{this.props.projectStore.secondaryColour}</p>
         </div>
       </div>
     );
