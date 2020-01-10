@@ -12,9 +12,23 @@ class Hello extends React.Component {
     };
   }
 
+  componentDidMount(){
+    this.focus();
+}
+focus() {
+  this.textInput.focus();
+}
+
+  submitUrl() {
+    var sanitizedUrl = this.props.projectStore.setUrl(this.state.url);
+    this.setState({
+      url: sanitizedUrl
+    }, ()=> {this.getResults()})
+  }
+
   setUrl(e) {
     if (e.keyCode == 9) {
-      this.getResults.bind(this);
+      this.submitUrl.bind(this);
     }
     this.setState({
       url: e.target.value
@@ -30,7 +44,7 @@ class Hello extends React.Component {
     } else {
       const scraperResults = await this.props.scraperStore.getScraperResults(this.state.url);
     
-    if(this.props.projectStore.setUrl(this.state.url) && scraperResults) {
+    if(scraperResults) {
       this.props.loadingStore.toggleLoading(false);
       this.props.componentStore.getNext();
     } else if(!scraperResults) {
@@ -51,8 +65,13 @@ class Hello extends React.Component {
       <div className={styles.hello}>
           <h1>Hi, Im <span>Norman</span></h1>
           <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore.</p>
-          <input type="text" placeholder="what's your website url?" onChange={this.setUrl.bind(this)} onKeyDown={this.checkForEnterKey}/>
-          <button onClick={this.getResults.bind(this)} ref={this.btn}>Ready!</button>
+          <input type="text" 
+          placeholder="what's your website url?" 
+          onChange={this.setUrl.bind(this)} 
+          onKeyDown={this.checkForEnterKey} 
+          autoFocus
+          ref={(input) => { this.textInput = input; }} />
+          <button onClick={this.submitUrl.bind(this)} ref={this.btn}>Ready!</button>
       </div>
     );
   }

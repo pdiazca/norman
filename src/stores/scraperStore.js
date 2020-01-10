@@ -3,15 +3,27 @@ import db from "../databases/database"
 
 
 class scraperStore {
-  // url2= ""
+  logo;
   primaryColours = []
+  secondaryColours = []
 
   getScraperResults(url) {
     return db.getUrlResults(url).then((res) => {
-      if(res !== false) {
+      if(res.coloursBg) {
+
+        // LOGO
+        this.logo = res.logo;
+
+        // SET PRIMARY COLOURS
         res.coloursBg.forEach((elm) => {
           this.primaryColours.push(elm[0])
         });
+
+        // SET SECONDARY COLOURS
+        res.coloursText.forEach((elm) => {
+          this.secondaryColours.push(elm[0])
+        });
+
         return true
       } else {
         return false
@@ -21,7 +33,9 @@ class scraperStore {
 }
 
 decorate(scraperStore, {
-  primaryColours: observable
+  primaryColours: observable,
+  secondaryColours: observable,
+  logo: observable
 })
 
 export default scraperStore
